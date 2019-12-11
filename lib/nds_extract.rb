@@ -79,7 +79,8 @@ def movies_with_directors_set(source)
   
   while director_index < source.length do 
     labeled_collection = movies_with_director_key(source[director_index][:name], source[director_index][:movies])
-    
+    bigarray.push(labeled_collection)
+    director_index += 1 
   end 
   
   # PSEUDO
