@@ -74,7 +74,7 @@ end
 def movies_with_directors_set(source)
   director_index = 0 
   
-  puts source[director_index][:movies][movie_index] # movie_index may be optional 
+  puts source[director_index][:movies] # movie_index may be optional 
   
   # PSEUDO
   # create a while loop that iterates thru each element of source array and points to :movie key
@@ -98,6 +98,7 @@ def movies_with_directors_set(source)
   #
   # Array of Arrays containing all of a director's movies. Each movie will need
   # to have a :director_name key added to it.
+  source[director_index][:movies]
 end
 
 # ----------------    End of Your Code Region --------------------
