@@ -75,7 +75,9 @@ def movies_with_directors_set(source)
   puts source[0][:movies][0]
   
   # PSEUDO
-  movies_with_director_key()
+  # create a while loop that iterates thru each director's :movie key
+  movies_with_director_key(name, movies_collection)
+  
 
   # GOAL: For each director, find their :movies Array and stick it in a new Array
   #
