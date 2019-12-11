@@ -72,28 +72,8 @@ def gross_per_studio(collection)
 end
 
 def movies_with_directors_set(source)
-  
-  [{:name=>"Stephen Spielberg",
-  :movies=>
-   [{:title=>"Jaws",
-     :studio=>"Universal",
-     :worldwide_gross=>260000000,
-     :release_year=>1975},
-    {:title=>"Close Encounters of the Third Kind",
-     :studio=>"Columbia",
-     :worldwide_gross=>135189114,
-     :release_year=>1977}]},
- {:name=>"Russo Brothers",
-  :movies=>
-   [{:title=>"Avengers Endgame",
-     :studio=>"Buena Vista",
-     :worldwide_gross=>858371337,
-     :release_year=>2019},
-    {:title=>"Avengers Infinity War",
-     :studio=>"Buena Vista",
-     :worldwide_gross=>678815482,
-     :release_year=>2018}]}]
-  pp source 
+  puts source[0][:movies][0]
+
   # GOAL: For each director, find their :movies Array and stick it in a new Array
   #
   # INPUT:
