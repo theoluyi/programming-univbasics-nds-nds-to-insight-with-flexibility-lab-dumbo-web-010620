@@ -72,11 +72,20 @@ def gross_per_studio(collection)
 end
 
 def movies_with_directors_set(source)
-  puts source[0][:movies][0]
+  director_index = 0 
+  
+  puts source[director_index][:movies][movie_index] # movie_index may be optional 
   
   # PSEUDO
-  # create a while loop that iterates thru each director's :movie key
-  movies_with_director_key(name, movies_collection)
+  # create a while loop that iterates thru each element of source array and points to :movie key
+  # the pointer goes inside the method below in the 2nd argument placeholder – movies_collection
+  # the pointer using source[director_index][:name] goes in the 1st argument name placeholder
+  # movies_with_director_key(name, movies_collection)
+  # the result of this operation is saved in a new variable called labeled_collection
+  # labeled_collection is pushed to an array
+  # the while loop repeats
+  # the while loop breaks out 
+  # the array is returned 
   
 
   # GOAL: For each director, find their :movies Array and stick it in a new Array
