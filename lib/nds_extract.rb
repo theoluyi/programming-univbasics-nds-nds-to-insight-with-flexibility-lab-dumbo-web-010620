@@ -72,9 +72,15 @@ def gross_per_studio(collection)
 end
 
 def movies_with_directors_set(source)
-  director_index = 0 
+  director_index = 0
+  bigarray = []
   
-  puts source[director_index][:movies] # movie_index may be optional 
+  source[director_index][:movies] # movie_index may be optional 
+  
+  while director_index < source.length do 
+    labeled_collection = movies_with_director_key(source[director_index][:name], source[director_index][:movies])
+    
+  end 
   
   # PSEUDO
   # create a while loop that iterates thru each element of source array and points to :movie key
@@ -98,7 +104,7 @@ def movies_with_directors_set(source)
   #
   # Array of Arrays containing all of a director's movies. Each movie will need
   # to have a :director_name key added to it.
-  source[director_index][:movies]
+  
 end
 
 # ----------------    End of Your Code Region --------------------
