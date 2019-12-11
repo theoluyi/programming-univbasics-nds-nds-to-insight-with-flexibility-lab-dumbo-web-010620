@@ -33,39 +33,67 @@ end
 
 # Your code after this point
 
+# 1ST SUCCESS 
+  # INPUT: [{movie1: "title1"}, {movie2: title2}]
+  # OUTPUT: [{movie1: "title1", director: "name"}, {movie2: title2, director: "name"}]
+  # TECHNIQUE: use movie_with_director_name method
 def movies_with_director_key(name, movies_collection)
-  # GOAL: For each Hash in an Array (movies_collection), provide a collection
-  # of movies and a directors name to the movie_with_director_name method
-  # and accumulate the returned Array of movies into a new Array that's
-  # returned by this method.
-  #
-  # INPUT:
-  # * name: A director's name
-  # * movies_collection: An Array of Hashes where each Hash represents a movie
-  #
-  # RETURN:
-  #
-  # Array of Hashes where each Hash represents a movie; however, they should all have a
-  # :director_name key. This addition can be done by using the provided
-  # movie_with_director_name method
+  array = []
+  i = 0 
+  while i < movies_collection.length do 
+    array << movie_with_director_name(name, movies_collection[i])
+    i += 1 
+  end 
+  array 
 end
 
-
+# 2ND SUCCESS 
+  # INPUT 
+  # [{:title=>"Movie A", :studio=>"Alpha Films", :worldwide_gross=>10},
+  # {:title=>"Movie B", :studio=>"Alpha Films", :worldwide_gross=>30},
+  # {:title=>"Movie C", :studio=>"Omega Films", :worldwide_gross=>30}]
+  # OUTPUT 
+  # {"Alpha Films" => 40, "Omega Films" => 30}
 def gross_per_studio(collection)
-  # GOAL: Given an Array of Hashes where each Hash represents a movie,
-  # return a Hash that includes the total worldwide_gross of all the movies from
-  # each studio.
-  #
-  # INPUT:
-  # * collection: Array of Hashes where each Hash where each Hash represents a movie
-  #
-  # RETURN:
-  #
-  # Hash whose keys are the studio names and whose values are the sum
-  # total of all the worldwide_gross numbers for every movie in the input Hash
+  studio_gross = {}
+  i = 0 
+  while i < collection.length do 
+    studio_name = collection[i][:studio]
+    studio_money = collection[i][:worldwide_gross]
+    if !studio_gross[studio_name]
+      studio_gross[studio_name] = studio_money
+    else studio_gross[studio_name]
+      studio_gross[studio_name] += studio_money
+    end 
+    i += 1
+  end 
+  # pp studio_gross
+  studio_gross
 end
 
 def movies_with_directors_set(source)
+  
+  [{:name=>"Stephen Spielberg",
+  :movies=>
+   [{:title=>"Jaws",
+     :studio=>"Universal",
+     :worldwide_gross=>260000000,
+     :release_year=>1975},
+    {:title=>"Close Encounters of the Third Kind",
+     :studio=>"Columbia",
+     :worldwide_gross=>135189114,
+     :release_year=>1977}]},
+ {:name=>"Russo Brothers",
+  :movies=>
+   [{:title=>"Avengers Endgame",
+     :studio=>"Buena Vista",
+     :worldwide_gross=>858371337,
+     :release_year=>2019},
+    {:title=>"Avengers Infinity War",
+     :studio=>"Buena Vista",
+     :worldwide_gross=>678815482,
+     :release_year=>2018}]}]
+  pp source 
   # GOAL: For each director, find their :movies Array and stick it in a new Array
   #
   # INPUT:
